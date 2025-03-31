@@ -1,3 +1,0 @@
-DOM (document object model) 
-CDM (content network delivery)
-
