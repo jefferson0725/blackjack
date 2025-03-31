@@ -144,6 +144,7 @@ btnNuevo.addEventListener('click', ()=>{
     divCartasJugador.innerHTML = "";
     divCartasComputadora.innerHTML = "";
 
-
+    btnPedir.disabled = false;
+    btnDetener.disabled = false;
     crearDeck();
 })
