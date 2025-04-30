@@ -5,7 +5,7 @@
 2S = Two of Spades (Pica)
 */
 
-(() =>{
+const miModulo = (() =>{
     'use strict'
     let deck         = [];
     const tipos      = ['C','D','H','S'],
@@ -29,10 +29,8 @@
         deck = crearDeck();
         puntosJugadores = [];
         for( let i = 0; i < numJugadores; i++){
-            puntosJugadores.push(0);
-            
+            puntosJugadores.push(0);   
         }
-
         puntajeHTML.forEach(element =>  element.innerText = 0 );
 
         divCartasJugadores.forEach(element => element.innerHTML = "");
@@ -131,9 +129,6 @@
         
     }
 
-
-
-
     //eventos
 
     btnPedir.addEventListener('click', () =>{
@@ -170,6 +165,9 @@
         iniciarJuego();
         
     })
-
+    return {
+        nuevoJuego: iniciarJuego
+    }
+    
 })();
 
