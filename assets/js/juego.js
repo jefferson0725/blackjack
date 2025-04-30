@@ -47,7 +47,6 @@ const miModulo = (() =>{
             for(let tipo of tipos){
                 deck.push(i+tipo);
             }
-
         }
         for(let tipo of tipos){
             for(let especial of especiales){
@@ -64,40 +63,30 @@ const miModulo = (() =>{
 
         if (deck.length === 0){
             alert("No hay cartas en el deck, debe iniciar juego")  
-            throw 'no hay cartas en el deck';
-             
+            throw 'no hay cartas en el deck';            
         }
         return deck.pop();
     }
-
-
     const valorCarta = (carta) =>{
         const valor = carta.substring(0, carta.length -1); 
         return(isNaN (valor)) ? (valor === 'A') ? 11 : 10 : valor * 1;
 
     }
-
-
     //0: primer jugador y ultimo computadora
-
     const acumularPuntos = (carta, turno) =>{
         puntosJugadores[turno] = puntosJugadores[turno] + valorCarta(carta)
         puntajeHTML[turno].innerText = puntosJugadores[turno];
 
         return puntosJugadores[turno];
     }
-
     const crearCarta = (carta, turno) =>{
         const imgCarta = document.createElement('img');
         imgCarta.src = `assets/cartas/${carta}.png`;
         imgCarta.classList.add('carta');
         divCartasJugadores[turno].append(imgCarta);   
     }
-
     const determinarGanador = ()=>{
-
         const [ puntosMinimo, puntosComputadora] = puntosJugadores;
-
         setTimeout(()=>{
             if(puntosComputadora === puntosMinimo){
                 alert('empate');
@@ -110,7 +99,6 @@ const miModulo = (() =>{
             }
         }, 500); //funcion para que las cartas aparezcan antes del mensaje de resultado
     }
-
     //turno computadora
     const turnoComputadora = (puntosMinimo) =>{
         let puntosComputadora = 0;
